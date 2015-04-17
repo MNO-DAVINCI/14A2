@@ -20,7 +20,17 @@ switch ($action) {
 			1. Gegevens uitlezen uit database (ID nodig!)
 			2. Tonen gegevens uit de database.
 		*/
-			echo $_GET['id'] . $_GET['action'];
+			if (isset($_GET['id'])) {
+
+				$db = makeDatabaseConnection();
+
+				$result = getStudent($_GET['id'], $db);
+
+				render('klas/read', $result);
+			} else {
+				echo "Donder op joh!";
+			}
+
 		break;	
 	
 	case 'update':
@@ -47,10 +57,9 @@ switch ($action) {
 
 	default:
 			
-			$sql = "SELECT * FROM personen";
+			$db = makeDatabaseConnection();
+			$result = getStudents($db);
 
-		 	$result = $db->query($sql);
-			var_dump($result);
-			render("klas/index");
+			render("klas/index", $result);
 		break;
 }

@@ -7,7 +7,7 @@
 		</tr>
 		<?php 
 
-		foreach ($result as $row) { 
+		foreach ($data as $row) { 
 		?>
 		<tr>
 			

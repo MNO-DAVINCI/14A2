@@ -16,5 +16,3 @@ define('DB_NAME', 'klas');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');
 define('DB_CHARSET', 'utf8');
-
-$db = new PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=' . DB_CHARSET, DB_USER, DB_PASS);
